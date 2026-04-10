@@ -4095,6 +4095,10 @@ extern const uint8_t u8g2_font_px437wyse700b_mf[] U8G2_FONT_SECTION("u8g2_font_p
 extern const uint8_t u8g2_font_px437wyse700b_mr[] U8G2_FONT_SECTION("u8g2_font_px437wyse700b_mr");
 extern const uint8_t u8g2_font_px437wyse700b_mn[] U8G2_FONT_SECTION("u8g2_font_px437wyse700b_mn");
 
+/* custom fonts */
+extern const uint8_t u8g2_font_myFontHarmony_tf[] U8G2_FONT_SECTION("u8g2_font_myFontHarmony_tf");
+extern const uint8_t u8g2_font_myFont_tf[] U8G2_FONT_SECTION("u8g2_font_myFont_tf");
+
 /* end font list */
 
 /*==========================================*/
