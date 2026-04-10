@@ -161,8 +161,8 @@ static const uint8_t u8x8_d_gu800_128x64_init_seq[] = {
   U8X8_C(0x40),                                 /* min (0x04f) / max (0x040) brightness */
   U8X8_C(0x84),                                 /* x increment */
   
-  // U8X8_CA(0x024, 0x040)              /* display on */
-  
+  U8X8_CA(0x024, 0x040),              /* display on */
+
   U8X8_END_TRANSFER(),             	/* disable chip */
   U8X8_END()             			/* end of sequence */
 };
@@ -172,15 +172,15 @@ static const u8x8_display_info_t u8x8_d_gu800_128x64_display_info =
 {
   /* chip_enable_level = */ 0,      /* GU800: CSS signal */
   /* chip_disable_level = */ 1,     /* GU800: CSS signal */
-  
+
   /* post_chip_enable_wait_ns = */ 40,
   /* pre_chip_disable_wait_ns = */ 150,
   /* reset_pulse_width_ms = */ 2,   /* GU800: Unspecified in datasheet */
-  /* post_reset_wait_ms = */ 2,     /* GU800: Min 1.5ms per datasheet */
+  /* post_reset_wait_ms = */ 100,   /* GU800: needs longer reset for ESP32 SPI init timing */
   /* sda_setup_time_ns = */ 40,     /* GU800: 40ns according to the timing diagram */
   /* sck_pulse_width_ns = */ 80,    /* GU800: Min 80ns per datasheet */
-  /* sck_clock_hz = */ 4000000UL,
-  /* spi_mode = */ 2,               /* active high, rising edge */
+  /* sck_clock_hz = */ 200000UL,    /* reduced for reliable SPI on ESP32-C3 */
+  /* spi_mode = */ 3,               /* clock idles high, data valid on rising edge (ESP32-C3 fix) */
   /* i2c_bus_clock_100kHz = */ 4,   /* GU800: Not used */
   /* data_setup_time_ns = */ 40,    /* GU800: Min 40ns per datasheet */
   /* write_pulse_width_ns = */ 150, /* GU800: Min 150ns per datasheet */
