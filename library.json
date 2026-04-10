@@ -16,7 +16,7 @@
   "license": "BSD-2-Clause",
   "homepage": "https://github.com/olikraus/u8g2",
   "build": {
-    "srcDirs": ["csrc", "cppsrc"],
+    "srcFilter": ["-<*>", "+<csrc/*.c>", "+<cppsrc/*.cpp>"],
     "flags": ["-Icsrc", "-Icppsrc"]
   },
   "frameworks": ["arduino", "espidf"],
