@@ -17,7 +17,7 @@
   "homepage": "https://github.com/olikraus/u8g2",
   "build": {
     "srcDirs": ["csrc", "cppsrc"],
-    "includeDir": "."
+    "flags": ["-Icsrc", "-Icppsrc"]
   },
   "frameworks": ["arduino", "espidf"],
   "platforms": "*"
